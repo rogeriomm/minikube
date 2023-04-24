@@ -18,6 +18,7 @@ package assets
 
 import (
 	"fmt"
+	"github.com/blang/semver/v4"
 	"os"
 	"runtime"
 	"strings"
