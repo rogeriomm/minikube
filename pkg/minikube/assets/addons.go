@@ -22,7 +22,6 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/blang/semver/v4"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 	"k8s.io/minikube/deploy/addons"
@@ -926,6 +925,7 @@ func GenerateTemplateData(addon *Addon, cc *config.ClusterConfig, netInfo Networ
 	// Network info for generating template
 	opts.NetworkInfo["ControlPlaneNodeIP"] = netInfo.ControlPlaneNodeIP
 	opts.NetworkInfo["ControlPlaneNodePort"] = fmt.Sprint(netInfo.ControlPlaneNodePort)
+	opts.NetworkInfo["DNSDomain"] = cfg.DNSDomain
 
 	// Append postfix "/" to registries
 	for k, v := range opts.Registries {
